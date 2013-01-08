@@ -30,4 +30,4 @@ int main()
  cout<<matchString(s,strlen(s),t,strlen(t))<<endl;
  getchar();
 return 0;
-}
+} 
