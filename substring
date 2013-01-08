@@ -1,0 +1,33 @@
+//find the index of the substring in a string
+#include<iostream>
+#include<cstdio>
+using namespace std;
+int matchString(char*p,int pl,char*t,int tl)
+{
+    if(t==NULL)
+    return strlen(p)-1;
+    int j=0;
+    for(int i=0;i<=pl;){
+    if(t[j]==0)//success case
+    return (i-j)?(i-j):0; 
+    if(p[i]==t[j]){
+        j++;
+        i++;
+    }
+    else{
+         i+=j;
+         j=0;
+         i++;
+         
+    }
+   }
+   return -1;
+}
+int main()
+{
+    char s[]="This transcript is automatically generated";
+    char t[]="tranc";
+ cout<<matchString(s,strlen(s),t,strlen(t))<<endl;
+ getchar();
+return 0;
+}
